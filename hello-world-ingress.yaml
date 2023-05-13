@@ -1,15 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-server-ingress
+  name: hello-world-ingress
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt-production
     kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
   ingressClassName: nginx
   rules:
-  - host: demo.das.quest
+  - host: hello-world.das.quest
     http:
       paths:
       - path: /
@@ -18,9 +18,9 @@ spec:
           service:
             name: web
             port:
-              name: http 
-#             number: 8080/443/8443
+#             name: http 
+              number: 8080
   tls:
   - hosts:
-    - demo.das.quest
-    secretName: nginx-secret
+    - hello-world.das.quest
+    secretName: hello-secret
