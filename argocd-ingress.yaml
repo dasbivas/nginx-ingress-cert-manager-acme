@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
+    #cert-manager.io/cluster-issuer: letsencrypt-staging
     kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     ingress.kubernetes.io/force-ssl-redirect: "true"
