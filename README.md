@@ -9,3 +9,8 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 ```
 # Step 3: Create cluster-issuer
 # Step 4: Create Ingress-Resources
+
+# Production certificate issuer URL
+```
+server: https://acme-v02.api.letsencrypt.org/directory
+```
