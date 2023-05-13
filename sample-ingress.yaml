@@ -18,7 +18,8 @@ spec:
           service:
             name: web
             port:
-              name: http
+              name: http 
+#             number: 8080/443/8443
   tls:
   - hosts:
     - demo.das.quest
