@@ -25,9 +25,9 @@ spec:
         backend:
           service:
             name: keycloak
-            port: 
-              name: http  
+            port:
+              name: http
   tls:
   - hosts:
     - keycloak.das.quest
-    secretName: keycloak-secret
+    secretName: ingress-secret
