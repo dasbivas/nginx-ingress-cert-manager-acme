@@ -23,9 +23,4 @@ spec:
   tls:
   - hosts:
     - demo.das.quest
-    secretName: nginx-secret 
-
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm install my-release bitnami/argo-cd  --namespace argocd --create-namespace
-
-kubectl expose deployment my-release-argo-cd-server --type=NodePort -n argocd --name my-release-argo-cd-nodeport
+    secretName: nginx-secret
