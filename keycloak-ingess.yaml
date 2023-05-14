@@ -31,4 +31,4 @@ spec:
   tls:
   - hosts:
     - keycloak.das.quest
-    secretName: ingress-secret
+    secretName: keycloak-secret
