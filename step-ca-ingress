@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: stepca-ingress
+  annotations:
+    kubernetes.io/ingress.allow-http: "false" # disable HTTP
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: stepca.das.quest
+      http:
+        paths:
+          - path: /acme/development/directory
+            pathType: Prefix
+            backend:
+              service:
+                name: step-certificates
+                port:
+                  number: 443
