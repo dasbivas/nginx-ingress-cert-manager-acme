@@ -1,0 +1,17 @@
+  ingress:
+    # dashboard.ingress.enabled -- Whether to enable ingress to the dashboard
+    enabled: true
+    # dashboard.ingress.ingressClassName -- From Kubernetes 1.18+ this field is supported in case your ingress controller supports it. When set, you do not need to add the ingress class as annotation.
+    ingressClassName: "nginx"
+    # dashboard.ingress.hosts -- Web ingress hostnames
+    hosts:
+      - polaris.das.quest
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-production
+      kubernetes.io/tls-acme: "true"
+    # dashboard.ingress.tls -- Ingress TLS configurationi
+    tls:
+    - hosts:
+      - polaris.das.quest
+      secretName: polaris-secret
+  # dashboard.priorityClassName -- Priority Class name to be used in deployment if provided.
