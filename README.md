@@ -14,3 +14,7 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 ```
 server: https://acme-v02.api.letsencrypt.org/directory
 ```
+# Initial password for argocd #admin
+```
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
